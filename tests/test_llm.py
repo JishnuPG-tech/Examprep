@@ -3,8 +3,8 @@ from examprep.services.llm import OmniRouteExtractor, OpenAICompatibleExtractor
 
 def test_omniroute_extractor_uses_config(monkeypatch):
     monkeypatch.setattr(\n        "examprep.services.llm.settings.omniroute_base_url", "http://omni/v1"\n    )
-    monkeypatch.setattr("examprep.services.llm.settings.omniroute_api_key", "secret")
-    monkeypatch.setattr("examprep.services.llm.settings.omniroute_model", "auto/reasoning:fast")
+    monkeypatch.setattr(\n        "examprep.services.llm.settings.omniroute_api_key", "secret"\n    )
+    monkeypatch.setattr(\n        "examprep.services.llm.settings.omniroute_model", "auto/reasoning:fast"\n    )
     monkeypatch.setattr(\n        "examprep.services.llm.settings.omniroute_route_model", "provider/model"\n    )
     monkeypatch.setattr("examprep.services.llm.settings.omniroute_mode", "balanced")
     monkeypatch.setattr(\n        "examprep.services.llm.settings.omniroute_budget_usd", 0.05\n    )
