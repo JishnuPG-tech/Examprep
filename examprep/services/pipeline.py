@@ -7,10 +7,10 @@ from ..db import SessionLocal
 from ..models import Question, SourceDocument
 from .dedupe import content_hash
 from .extractor import extract_pdf
+from .llm import LLMError, build_extractor
 from .normalizer import normalize_text
 from .parser import parse_json_questions, parse_mcqs
 from .validator import validate_question
-from .llm import LLMError, build_extractor
 
 
 class Pipeline:
