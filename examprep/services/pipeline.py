@@ -21,7 +21,10 @@ class Pipeline:
 
         extractor = None
         if settings.omniroute_enabled or (settings.llm_base_url and settings.llm_model):
-            extractor = build_extractor()
+            try:
+                extractor = build_extractor()
+            except LLMError:
+                return drafts, "model_unavailable"
 
         if extractor is None:
             return drafts, "deterministic"
